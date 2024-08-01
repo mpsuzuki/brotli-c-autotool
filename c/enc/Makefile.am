@@ -1,5 +1,5 @@
 lib_LTLIBRARIES = libbrotlienc.la
-libbrotlienc_la_LIBTOOLFLAGS = @LIBBROTLI_VERSION_INFO@
+libbrotlienc_la_LDFLAGS = @LIBBROTLI_VERSION_INFO@
 include source.lst
 libbrotlienc_la_SOURCES = $(bootstrap_sources)
 
