@@ -12,7 +12,7 @@ do
   echo -n "* Generating "${d}"/source.lst..."
   (cd ${d} && \
    echo "bootstrap_sources=\\" > source.lst && \
-   ls -1 *.c *.h 2>/dev/null | sed 's/^/	/;s/$/ \\/' | sed '$s/\\$//' >> source.lst )
+   ls -1 *.c *.h 2>/dev/null | sed '/^config\.h$/d;s/^/	/;s/$/ \\/' | sed '$s/\\$//' >> source.lst )
   echo    " ok"
 done
 
