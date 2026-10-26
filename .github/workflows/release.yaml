@@ -91,6 +91,8 @@ jobs:
       if: github.event_name == 'release' || steps.cache-vcpkg.outputs.cache-hit != 'true'
       shell: 'powershell'
       run: |
+        $url = "https://github.com/microsoft/vcpkg/archive/refs/tags/${VCPKG_VERSION}.zip"
+        Write-Host "URL=$url"
         Invoke-WebRequest -Uri "https://github.com/microsoft/vcpkg/archive/refs/tags/${VCPKG_VERSION}.zip" -OutFile "vcpkg.zip"
 
     - name: Bootstrap vcpkg
